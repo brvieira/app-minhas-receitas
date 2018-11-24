@@ -60,22 +60,23 @@ public class CategoriasAdapter extends RecyclerView.Adapter<CategoriasAdapter.Ca
     }
 
     class CategoriasViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
-        private Button mCategoryButton;
+        Button mCategoryButton;
+
+        public CategoriasViewHolder(View itemView) {
+            super(itemView);
+            mCategoryButton = itemView.findViewById(R.id.mCategoryB);
+            mCategoryButton.setOnClickListener(this);
+        }
+
+        public void bind(Categoria categoria) {
+            mCategoryButton.setText(categoria.getNome());
+        }
 
         @Override
         public void onClick(View view) {
             int position = getAdapterPosition();
             Categoria categoria = listaCategorias.get(position);
             mClickListener.onClickItem(categoria);
-        }
-
-        public CategoriasViewHolder(@NonNull View itemView) {
-            super(itemView);
-            this.mCategoryButton = itemView.findViewById(R.id.mCategoryB);
-        }
-
-        public void bind(Categoria categoria) {
-            mCategoryButton.setText(categoria.getNome());
         }
 
     }

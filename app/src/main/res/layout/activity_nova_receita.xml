@@ -22,6 +22,16 @@
             android:textSize="30dp"
             android:textStyle="bold"
             />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:id="@+id/categoriaText"/>
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -31,6 +41,7 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:id="@+id/titulo"
             android:textSize="20dp"
             />
 
@@ -44,6 +55,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:lines="10"
+            android:id="@+id/ingredientes"
             android:textSize="20dp"
             />
 
@@ -57,18 +69,19 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:lines="10"
+            android:id="@+id/como_fazer"
             android:textSize="20dp"
             />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/mSaveButton"
             android:background="@drawable/button_layout"
             android:textSize="20dp"
             android:layout_gravity="bottom"
             android:layout_marginBottom="10dp"
             android:textColor="#FFFFFF"
+            android:onClick="salvarReceita"
             android:text="Salvar"/>
     </LinearLayout>
 

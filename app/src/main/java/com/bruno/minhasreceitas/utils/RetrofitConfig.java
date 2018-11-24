@@ -9,12 +9,16 @@ public class RetrofitConfig {
 
     public RetrofitConfig() {
         this.retrofit = new Retrofit.Builder()
-                .baseUrl("http://10.122.18.5:9090/")
+                .baseUrl("http://192.168.1.31:9090/")
                 .addConverterFactory(JacksonConverterFactory.create())
                 .build();
     }
 
     public CategoriaService getCategoriaService() {
         return this.retrofit.create(CategoriaService.class);
+    }
+
+    public ReceitaService getReceitaService() {
+        return this.retrofit.create(ReceitaService.class);
     }
 }

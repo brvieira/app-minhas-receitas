@@ -45,5 +45,5 @@
         android:layout_marginBottom="10dp"
         android:textColor="#FFFFFF"
         android:text="Salvar"
-        android:onClick="salvarReceita"/>
+        android:onClick="salvarCategoria"/>
 </FrameLayout>

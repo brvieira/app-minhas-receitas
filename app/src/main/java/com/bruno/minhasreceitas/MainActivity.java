@@ -8,6 +8,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import com.bruno.minhasreceitas.model.Categoria;
 import com.bruno.minhasreceitas.utils.RetrofitConfig;
@@ -25,7 +26,6 @@ public class MainActivity extends AppCompatActivity implements CategoriasAdapter
     private RecyclerView mRecyclerV;
     private FloatingActionButton mAddButton;
     private CategoriasAdapter mCategoriaAdapter;
-    private List<Categoria> listaCategorias;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,6 +48,7 @@ public class MainActivity extends AppCompatActivity implements CategoriasAdapter
 
     @Override
     public void onClickItem(Categoria categoria) {
+        Toast.makeText(getApplicationContext(), "Item Clicked", Toast.LENGTH_LONG).show();
         /*Intent intent = new Intent(MainActivity.this, AtualizarListaEsperaActiviy.class);
 
         intent.putExtra(AtualizarListaEsperaActiviy.EXTRA_LISTA_ESPERA, listaEspera);
@@ -70,6 +71,8 @@ public class MainActivity extends AppCompatActivity implements CategoriasAdapter
 
             @Override
             public void onFailure(Call<List<Categoria>> call, Throwable t) {
+                Toast.makeText(getApplicationContext(), "Erro ao buscar categorias!", Toast.LENGTH_LONG).show();
+                carregarCategorias();
                 Log.e("CategoriaService ", "Erro ao buscar Categorias "+ t.getMessage());
             }
         });

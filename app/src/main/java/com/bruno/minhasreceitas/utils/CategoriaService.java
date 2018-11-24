@@ -16,7 +16,7 @@ public interface CategoriaService {
     Call<List<Categoria>> getCategorias();
 
     @GET("categorias/{id}")
-    Call<Categoria> getCategoria(@Path("id") String id);
+    Call<List<Categoria>> getCategoria(@Path("id") String id);
 
     @POST("categorias")
     Call<Categoria> newCategoria(@Body Categoria categoria);
