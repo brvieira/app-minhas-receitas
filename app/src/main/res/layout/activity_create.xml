@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    tools:context=".view.CreateActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cadastrar Nova"
+            android:textColor="@color/colorAccent"
+            android:layout_gravity="start|top"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            />
+
+        <Button
+            android:id="@+id/mCreateReceita"
+            android:text="Receita"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_layout"
+            android:textSize="20dp"
+            android:onClick="onClickReceita"
+            android:layout_marginTop="10dp"
+            android:textColor="#FFFFFF"
+            />
+
+        <Button
+            android:id="@+id/mCreateCategoria"
+            android:text="Categoria"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_layout"
+            android:textSize="20dp"
+            android:layout_marginTop="10dp"
+            android:onClick="onClickCategoria"
+            android:textColor="#FFFFFF"
+            />
+
+    </LinearLayout>
+
+</FrameLayout>

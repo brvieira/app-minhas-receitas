@@ -1,4 +1,4 @@
-package com.bruno.minhasreceitas;
+package com.bruno.minhasreceitas.view.adapter;
 
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -7,14 +7,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.bruno.minhasreceitas.R;
+import com.bruno.minhasreceitas.model.Categoria;
+
 import java.util.List;
 
 public class CategoriasAdapter extends RecyclerView.Adapter<CategoriasAdapter.CategoriasViewHolder> {
-    private List<CategoriaEntry> listaCategorias;
+    private List<Categoria> listaCategorias;
     OnClickListener mClickListener;
 
-    interface OnClickListener {
-        void onClickItem(CategoriaEntry categoria);
+    public interface OnClickListener {
+        void onClickItem(Categoria categoria);
     }
 
     public CategoriasAdapter(OnClickListener mClickListener) {
@@ -33,7 +36,7 @@ public class CategoriasAdapter extends RecyclerView.Adapter<CategoriasAdapter.Ca
 
     @Override
     public void onBindViewHolder(@NonNull CategoriasViewHolder categoriasViewHolder, int i) {
-        CategoriaEntry categoria = listaCategorias.get(i);
+        Categoria categoria = listaCategorias.get(i);
 
         categoriasViewHolder.bind(categoria);
     }
@@ -47,12 +50,12 @@ public class CategoriasAdapter extends RecyclerView.Adapter<CategoriasAdapter.Ca
         return 0;
     }
 
-    public void setListaCategorias(List<CategoriaEntry> lista){
+    public void setListaCategorias(List<Categoria> lista){
         listaCategorias = lista;
         this.notifyDataSetChanged();
     }
 
-    public List<CategoriaEntry> getListaCategorias() {
+    public List<Categoria> getListaCategorias() {
         return listaCategorias;
     }
 
@@ -62,7 +65,7 @@ public class CategoriasAdapter extends RecyclerView.Adapter<CategoriasAdapter.Ca
         @Override
         public void onClick(View view) {
             int position = getAdapterPosition();
-            CategoriaEntry categoria = listaCategorias.get(position);
+            Categoria categoria = listaCategorias.get(position);
             mClickListener.onClickItem(categoria);
         }
 
@@ -71,7 +74,7 @@ public class CategoriasAdapter extends RecyclerView.Adapter<CategoriasAdapter.Ca
             this.mCategoryButton = itemView.findViewById(R.id.mCategoryB);
         }
 
-        public void bind(CategoriaEntry categoria) {
+        public void bind(Categoria categoria) {
             mCategoryButton.setText(categoria.getNome());
         }
 
