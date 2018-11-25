@@ -13,6 +13,7 @@ import android.widget.Toast;
 import com.bruno.minhasreceitas.model.Categoria;
 import com.bruno.minhasreceitas.utils.RetrofitConfig;
 import com.bruno.minhasreceitas.view.CreateActivity;
+import com.bruno.minhasreceitas.view.ListaReceitas;
 import com.bruno.minhasreceitas.view.adapter.CategoriasAdapter;
 
 import java.util.ArrayList;
@@ -48,12 +49,10 @@ public class MainActivity extends AppCompatActivity implements CategoriasAdapter
 
     @Override
     public void onClickItem(Categoria categoria) {
-        Toast.makeText(getApplicationContext(), "Item Clicked", Toast.LENGTH_LONG).show();
-        /*Intent intent = new Intent(MainActivity.this, AtualizarListaEsperaActiviy.class);
-
-        intent.putExtra(AtualizarListaEsperaActiviy.EXTRA_LISTA_ESPERA, listaEspera);
-
-        startActivity(intent);*/
+        Intent intent = new Intent(MainActivity.this, ListaReceitas.class);
+        intent.putExtra("CATEGORIA_ID", categoria.getId());
+        intent.putExtra("CATEGORIA_NOME", categoria.getNome());
+        startActivity(intent);
     }
 
     public void onClickAddButton(View v) {

@@ -6,31 +6,29 @@ public class Receita {
 
     private int id;
 
-    @JsonProperty("categoria_id")
-    private int categoriaId;
+    private int categoria_id;
 
     private String titulo, ingredientes;
 
-    @JsonProperty("como_fazer")
-    private String comoFazer;
+    private String como_fazer;
 
     public Receita() {
         super();
     }
 
-    public Receita(int id, int categoriaId, String titulo, String ingredientes, String comoFazer) {
+    public Receita(int id, int categoria_id, String titulo, String ingredientes, String como_fazer) {
         this.id = id;
-        this.categoriaId = categoriaId;
+        this.categoria_id = categoria_id;
         this.titulo = titulo;
         this.ingredientes = ingredientes;
-        this.comoFazer = comoFazer;
+        this.como_fazer = como_fazer;
     }
 
-    public Receita(int categoriaId, String titulo, String ingredientes, String comoFazer) {
-        this.categoriaId = categoriaId;
+    public Receita(int categoria_id, String titulo, String ingredientes, String como_fazer) {
+        this.categoria_id = categoria_id;
         this.titulo = titulo;
         this.ingredientes = ingredientes;
-        this.comoFazer = comoFazer;
+        this.como_fazer = como_fazer;
     }
 
     public int getId() {
@@ -57,19 +55,19 @@ public class Receita {
         this.ingredientes = ingredientes;
     }
 
-    public String getComoFazer() {
-        return comoFazer;
+    public String getComo_fazer() {
+        return como_fazer;
     }
 
-    public void setComoFazer(String comoFazer) {
-        this.comoFazer = comoFazer;
+    public void setComo_fazer(String como_fazer) {
+        this.como_fazer = como_fazer;
     }
 
-    public int getCategoriaId() {
-        return categoriaId;
+    public int getCategoria_id() {
+        return categoria_id;
     }
 
-    public void setCategoriaId(int categoriaId) {
-        this.categoriaId = categoriaId;
+    public void setCategoria_id(int categoria_id) {
+        this.categoria_id = categoria_id;
     }
 }

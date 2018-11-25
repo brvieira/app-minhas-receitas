@@ -39,8 +39,7 @@ public class NovaCategoria extends AppCompatActivity {
             @Override
             public void onResponse(Call<Categoria> call, Response<Categoria> response) {
                 Toast.makeText(getApplicationContext(), "Categoria salva com sucesso!", Toast.LENGTH_LONG).show();
-                Intent intent = new Intent(NovaCategoria.this, MainActivity.class);
-                startActivity(intent);
+                finish();
             }
 
             @Override

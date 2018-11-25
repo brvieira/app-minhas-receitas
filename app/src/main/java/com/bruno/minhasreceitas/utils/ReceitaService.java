@@ -18,4 +18,12 @@ public interface ReceitaService {
     @GET("receitas/{id}")
     Call<List<Receita>> getReceita(@Path("id") String id);
 
+    @GET("categorias/receitas/{id}")
+    Call<List<Receita>> getReceitas(@Path("id") String id);
+
+    @DELETE("receitas/{id}")
+    Call<Void> deleteReceita(@Path("id") String id);
+
+    @PUT("receitas")
+    Call<Void> editarReceita(@Body Receita receita);
 }

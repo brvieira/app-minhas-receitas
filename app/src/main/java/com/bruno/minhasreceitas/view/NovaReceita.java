@@ -48,6 +48,7 @@ public class NovaReceita extends AppCompatActivity {
 
             else {
                 categoriaId = 0;
+
             }
         }
 
@@ -82,8 +83,8 @@ public class NovaReceita extends AppCompatActivity {
 
         receita.setTitulo(titulo.getText().toString());
         receita.setIngredientes(ingredientes.getText().toString());
-        receita.setComoFazer(comoFazer.getText().toString());
-        receita.setCategoriaId(this.categoriaId);
+        receita.setComo_fazer(comoFazer.getText().toString());
+        receita.setCategoria_id(this.categoriaId);
 
         Call<Receita> call = new RetrofitConfig().getReceitaService().novaReceita(receita);
 
@@ -91,8 +92,7 @@ public class NovaReceita extends AppCompatActivity {
             @Override
             public void onResponse(Call<Receita> call, Response<Receita> response) {
                 Toast.makeText(getApplicationContext(), "Receita salva com sucesso!", Toast.LENGTH_LONG).show();
-                Intent intent = new Intent(NovaReceita.this, MainActivity.class);
-                startActivity(intent);
+                finish();
             }
 
             @Override
